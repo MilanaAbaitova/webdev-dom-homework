@@ -47,14 +47,14 @@
 
 fetch("https://wedev-api.sky.pro/api/v1/Milana-Abaytova/comments", {
   method: "GET",
-}).then((Response) => {
-  Response.json().then((responseData) => {
+}).then((response) => {
+  response.json().then((responseData) => {
     const apiComments = responseData.comments.map((comment) => {
       return {
         author: { name: comment.author.name },
         date: getDateInventor(comment.date),
         likes: comment.likes,
-        isLiked: false,
+        isLiked: true,
         text: comment.text,
       };
     });
@@ -213,21 +213,21 @@ const renderComments = () => {
               .replaceAll(">", "&gt;")
               .replaceAll('"', "&quot;"),
             }),
-        }).then((Response) => {
-          Response.json().then((responseData) => {
+        }).then((response) => {
+          response.json().then((responseData) => {
             fetch(
               " https://wedev-api.sky.pro/api/v1/Milana-Abaytova/comments",
               {
                 method: "GET",
               }
-            ).then((Response) => {
-              Response.json().then((responseData) => {
+            ).then((response) => {
+              response.json().then((responseData) => {
                 const apiComments = responseData.comments.map((comment) => {
                   return {
                     author: { name: comment.author.name },
                     date: getDateInventor(comment.date),
                     likes: comment.likes,
-                    isLiked: false,
+                    isLiked: true,
                     text: comment.text,
                   };
                 });
