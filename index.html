@@ -54,7 +54,7 @@ fetch("https://wedev-api.sky.pro/api/v1/Milana-Abaytova/comments", {
         author: { name: comment.author.name },
         date: getDateInventor(comment.date),
         likes: comment.likes,
-        isLiked: true,
+        isLiked: false,
         text: comment.text,
       };
     });
@@ -227,7 +227,7 @@ const renderComments = () => {
                     author: { name: comment.author.name },
                     date: getDateInventor(comment.date),
                     likes: comment.likes,
-                    isLiked: true,
+                    isLiked: false,
                     text: comment.text,
                   };
                 });
